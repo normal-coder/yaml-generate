@@ -54,6 +54,7 @@
                     :download="`${processedIdent}.yml`" class="btn btn-primary btn-sm ml-2">
                     Download YAML
                 </a>
+                <button class="btn btn-danger btn-sm" @click.prevent="clearAll">Clear All</button>
             </h3>
 
             <pre>{{ yaml }}</pre>
@@ -118,6 +119,15 @@
                     this.items = this.items.concat(newItems);
                     // Clear the importItems field
                     this.importItems = '';
+                },
+                clearAll() {
+                    this.ident = '';
+                    this.name = '';
+                    this.name_cn = '';
+                    this.items = [''];
+                    this.slug = '';
+                    this.importItems = '';
+                    this.yaml = '';
                 }
             },
             watch: {
