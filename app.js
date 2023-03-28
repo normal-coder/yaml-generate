@@ -8,7 +8,7 @@ const yaml = require('js-yaml');
 const directory = __dirname + '/compass-projects-information/collections';
 
 app.get('/', (req, res) => {
-    const filePath = path.join(__dirname,'app.html');
+    const filePath = path.join(__dirname, 'app.html');
     res.sendFile(filePath);
 });
 
@@ -17,7 +17,7 @@ app.get('/getYamlList', (req, res) => {
     const data = files.map(file => {
         const content = fs.readFileSync(`${directory}/${file}`, 'utf8');
         const { ident, name, name_cn, slug, items } = yaml.load(content);
-        return { filename: file, ident, name_cn };
+        return { filename: file, ident, name_cn, itemCount: items.length };
     });
     res.json(data);
 });
