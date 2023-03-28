@@ -1,0 +1,4 @@
+[submodule "data"]
+	path = data
+	url = git@gitee.com:oss-compass/compass-projects-information.git
+	branch = main
