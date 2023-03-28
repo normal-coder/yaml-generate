@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const yaml = require('js-yaml');
 
-const directory = __dirname + '/compass-projects-information/collections';
+const directory = __dirname + '/data/collections';
 
 app.get('/', (req, res) => {
     const filePath = path.join(__dirname, 'app.html');
